@@ -1,0 +1,17 @@
+DEPENDENCIES
+  grid-node
+    path: .
+    metadata: true
+
+GRAPH
+  chrome (1.0.12)
+  grid-node (0.1.0)
+    chrome (>= 0.0.0)
+    java (>= 0.0.0)
+    selenium (< 2.5.1)
+    xvfb (>= 0.0.0)
+    yum (>= 0.0.0)
+  java (1.35.0)
+  selenium (2.5.0)
+  xvfb (2.0.0)
+  yum (3.6.3)

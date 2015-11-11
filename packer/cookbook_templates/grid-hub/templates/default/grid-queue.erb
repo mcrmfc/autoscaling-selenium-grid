@@ -1,0 +1,3 @@
+grid_queue=`curl -sX GET http://localhost:4444/grid/api/hub/ -d '{"configuration":["newSessionRequestCount"]}' | python -c 'import sys, json; print json.load(sys.stdin)["newSessionRequestCount"]'`
+timestamp=`date -u  "+%Y-%m-%dT%H:%M:%SZ"`
+aws cloudwatch put-metric-data --metric-name selenium-queue --namespace selenium --timestamp $timestamp --value $grid_queue --unit Count --region eu-west-1

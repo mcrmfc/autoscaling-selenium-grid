@@ -1,0 +1,22 @@
+{
+    "variables": {
+        "aws_access_key": "{{env `access_key`}}",
+        "aws_secret_key": "{{env `secret_key`}}"
+    },
+    "provisioners": [{
+          "type": "chef-solo",
+          "cookbook_paths": ["cookbooks"],
+          "run_list": ["grid-hub"]
+    }],
+    "builders": [{
+        "type": "amazon-ebs",
+        "access_key": "{{user `aws_access_key`}}",
+        "secret_key": "{{user `aws_secret_key`}}",
+        "region": "eu-west-1",
+        "source_ami": "ami-1c2e8b6b",
+        "instance_type": "t1.micro",
+        "ssh_username": "ec2-user",
+        "ssh_pty" : "true",
+        "ami_name": "selenium-hub {{timestamp}}"
+    }]
+}

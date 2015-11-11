@@ -1,0 +1,13 @@
+name             'grid-node'
+maintainer       'YOUR_NAME'
+maintainer_email 'YOUR_EMAIL'
+license          'All rights reserved'
+description      'Installs/Configures grid-node'
+long_description 'Installs/Configures grid-node'
+version          '0.1.0'
+
+depends 'chrome'
+depends 'xvfb'
+depends 'java'
+depends 'yum'
+depends 'selenium', '< 2.5.1'
